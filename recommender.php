@@ -1,8 +1,10 @@
 <?php
-//include_once("msql-connection.php");
+include_once("msql-connection.php");
 
-//$id = "coolbangers1438@gmail.com";
-$command = escapeshellcmd('/Applications/XAMPP/xamppfiles/htdocs/Book-My-Movie/recommendation_system.py');
+
+$id = $_SESSION["email"]; //getting the user id
+$command = escapeshellcmd("rec2.py $id");
+echo "Hel";
 
 echo shell_exec($command);
 
